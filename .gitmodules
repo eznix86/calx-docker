@@ -1,4 +1,3 @@
-[submodule "calcom"]
-	path = calcom
-	url = https://github.com/calcom/cal.com.git
-	branch = main
+[submodule "calxmu"]
+	path = calxmu
+	url = https://github.com/mercurymu/calx.mu.git
