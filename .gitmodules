@@ -1,3 +1,4 @@
 [submodule "calxmu"]
 	path = calxmu
 	url = https://github.com/mercurymu/calx.mu.git
+	branch = feature/wording

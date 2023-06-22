@@ -1,15 +1,14 @@
 services:
   - type: web
-    name: cal-web
+    name: calx-web
     plan: standard
-    repo: https://github.com/calcom/docker.git
-    dockerfilePath: ./Dockerfile.render
+    repo: https://github.com/mercurymu/calx-docker.git
+    dockerfilePath: ./Dockerfile
     env: docker
     envVars:
-
       - key: DATABASE_URL
         fromDatabase:
-          name: cal-postgres
+          name: calx-postgres
           property: connectionString
 
       - key: CALENDSO_ENCRYPTION_KEY

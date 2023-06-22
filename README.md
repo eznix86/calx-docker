@@ -1,39 +1,39 @@
 <!-- PROJECT LOGO -->
 <p align="center">
-  <a href="https://github.com/calcom/cal.com">
+  <a href="https://github.com/calcom/Calx.mu">
     <img src="https://user-images.githubusercontent.com/8019099/133430653-24422d2a-3c8d-4052-9ad6-0580597151ee.png" alt="Logo">
 
   </a>
 
-  <h3 align="center">Cal.com (formerly Calendso)</h3>
+  <h3 align="center">Calx.mu (formerly Calendso)</h3>
 
   <p align="center">
     The open-source Calendly alternative. (Docker Edition)
     <br />
-    <a href="https://cal.com"><strong>Learn more »</strong></a>
+    <a href="https://Calx.mu"><strong>Learn more »</strong></a>
     <br />
     <br />
-    <a href="https://cal.com/slack">Slack</a>
+    <a href="https://Calx.mu/slack">Slack</a>
     ·
-    <a href="https://cal.com">Website</a>
+    <a href="https://Calx.mu">Website</a>
     ·
-    <a href="https://github.com/calcom/cal.com/issues">Core Cal.com related Issues</a>
+    <a href="https://github.com/calcom/Calx.mu/issues">Core Calx.mu related Issues</a>
     ·
     <a href="https://github.com/calcom/docker/issues">Docker specific Issues</a>
     ·
-    <a href="https://cal.com/roadmap">Roadmap</a>
+    <a href="https://Calx.mu/roadmap">Roadmap</a>
   </p>
 </p>
 
 # Docker
 
-This image can be found on DockerHub at [https://hub.docker.com/r/calcom/cal.com](https://hub.docker.com/r/calcom/cal.com)
+This image can be found on DockerHub at [https://hub.docker.com/r/calcom/Calx.mu](https://hub.docker.com/r/calcom/Calx.mu)
 
-The Docker configuration for Cal.com is an effort powered by people within the community. Cal.com, Inc. does not yet provide official support for Docker, but we will accept fixes and documentation at this time. Use at your own risk.
+The Docker configuration for Calx.mu is an effort powered by people within the community. Calx.mu, Inc. does not yet provide official support for Docker, but we will accept fixes and documentation at this time. Use at your own risk.
 
 ## Important Notes
 
-This Docker Image is managed by the Cal.com Community. Join the team [here](https://github.com/calcom/docker/discussions/32). Support for this image can be found via the repository, located at [https://github.com/calcom/docker](https://github.com/calcom/docker)
+This Docker Image is managed by the Calx.mu Community. Join the team [here](https://github.com/calcom/docker/discussions/32). Support for this image can be found via the repository, located at [https://github.com/calcom/docker](https://github.com/calcom/docker)
 
 **Currently, this image is intended for local development/evaluation use only, as there are specific requirements for providing environmental variables at build-time in order to specify a non-localhost BASE_URL. (this is due to the nature of the static site compilation, which embeds the variable values). The ability to update these variables at runtime is in-progress and will be available in the future.**
 
@@ -45,9 +45,9 @@ Make sure you have `docker` & `docker compose` installed on the server / system.
 
 Note: `docker compose` without the hyphen is now the primary method of using docker-compose, per the Docker documentation.
 
-## (Most users) Running Cal.com with Docker Compose
+## (Most users) Running Calx.mu with Docker Compose
 
-If you are evaluating Cal.com or running with minimal to no modifications, this option is for you.
+If you are evaluating Calx.mu or running with minimal to no modifications, this option is for you.
 
 1. Clone calcom/docker
 
@@ -81,21 +81,21 @@ If you are evaluating Cal.com or running with minimal to no modifications, this 
     
     Note: To aid with support, by default Scarf.sh is used as registry proxy for download metrics.
     
-5. Start Cal.com via docker compose
+5. Start Calx.mu via docker compose
 
-    (Most basic users, and for First Run) To run the complete stack, which includes a local Postgres database, Cal.com web app, and Prisma Studio:
+    (Most basic users, and for First Run) To run the complete stack, which includes a local Postgres database, Calx.mu web app, and Prisma Studio:
     
     ```bash
     docker compose up -d
     ```
 
-    To run Cal.com web app and Prisma Studio against a remote database, ensure that DATABASE_URL is configured for an available database and run:
+    To run Calx.mu web app and Prisma Studio against a remote database, ensure that DATABASE_URL is configured for an available database and run:
 
     ```bash
     docker compose up -d calcom studio
     ```
 
-    To run only the Cal.com web app, ensure that DATABASE_URL is configured for an available database and run:
+    To run only the Calx.mu web app, ensure that DATABASE_URL is configured for an available database and run:
 
     ```bash
     docker compose up -d calcom
@@ -103,11 +103,11 @@ If you are evaluating Cal.com or running with minimal to no modifications, this 
 
     **Note: to run in attached mode for debugging, remove `-d` from your desired run command.**
 
-6. Open a browser to [http://localhost:3000](http://localhost:3000), or your defined NEXT_PUBLIC_WEBAPP_URL. The first time you run Cal.com, a setup wizard will initialize. Define your first user, and you're ready to go!
+6. Open a browser to [http://localhost:3000](http://localhost:3000), or your defined NEXT_PUBLIC_WEBAPP_URL. The first time you run Calx.mu, a setup wizard will initialize. Define your first user, and you're ready to go!
 
-## Updating Cal.com
+## Updating Calx.mu
 
-1. Stop the Cal.com stack
+1. Stop the Calx.mu stack
 
     ```bash
     docker compose down
@@ -119,13 +119,13 @@ If you are evaluating Cal.com or running with minimal to no modifications, this 
     docker compose pull
     ```
 3. Update env vars as necessary.
-4. Re-start the Cal.com stack
+4. Re-start the Calx.mu stack
 
     ```bash
     docker compose up -d
     ```
 
-## (Advanced users) Build and Run Cal.com
+## (Advanced users) Build and Run Calx.mu
 
 1. Clone calcom/docker
 
@@ -151,7 +151,7 @@ If you are evaluating Cal.com or running with minimal to no modifications, this 
 
     For configuration options see [Build-time variables](#build-time-variables) below. Update the appropriate values in your .env file, then proceed.
 
-5. Build the Cal.com docker image: 
+5. Build the Calx.mu docker image: 
 
     Note: Due to application configuration requirements, an available database is currently required during the build process.
 
@@ -163,27 +163,27 @@ If you are evaluating Cal.com or running with minimal to no modifications, this 
     docker compose up -d database
     ```
 
-6. Build Cal.com via docker compose (DOCKER_BUILDKIT=0 must be provided to allow a network bridge to be used at build time. This requirement will be removed in the future)
+6. Build Calx.mu via docker compose (DOCKER_BUILDKIT=0 must be provided to allow a network bridge to be used at build time. This requirement will be removed in the future)
 
     ```bash
-    DOCKER_BUILDKIT=0 docker compose build calcom
+    DOCKER_BUILDKIT=0 docker compose build calx
     ```
 
-7. Start Cal.com via docker compose
+7. Start Calx.mu via docker compose
 
-    (Most basic users, and for First Run) To run the complete stack, which includes a local Postgres database, Cal.com web app, and Prisma Studio:
+    (Most basic users, and for First Run) To run the complete stack, which includes a local Postgres database, Calx.mu web app, and Prisma Studio:
 
     ```bash
     docker compose up -d
     ```
 
-    To run Cal.com web app and Prisma Studio against a remote database, ensure that DATABASE_URL is configured for an available database and run:
+    To run Calx.mu web app and Prisma Studio against a remote database, ensure that DATABASE_URL is configured for an available database and run:
 
     ```bash
     docker compose up -d calcom studio
     ```
 
-    To run only the Cal.com web app, ensure that DATABASE_URL is configured for an available database and run:
+    To run only the Calx.mu web app, ensure that DATABASE_URL is configured for an available database and run:
 
     ```bash
     docker compose up -d calcom
@@ -191,7 +191,7 @@ If you are evaluating Cal.com or running with minimal to no modifications, this 
 
     **Note: to run in attached mode for debugging, remove `-d` from your desired run command.**
 
-8. Open a browser to [http://localhost:3000](http://localhost:3000), or your defined NEXT_PUBLIC_WEBAPP_URL. The first time you run Cal.com, a setup wizard will initialize. Define your first user, and you're ready to go!
+8. Open a browser to [http://localhost:3000](http://localhost:3000), or your defined NEXT_PUBLIC_WEBAPP_URL. The first time you run Calx.mu, a setup wizard will initialize. Define your first user, and you're ready to go!
 
 ## Configuration
 
@@ -203,7 +203,7 @@ These variables must also be provided at runtime
 | --- | --- | --- | --- |
 | CALCOM_LICENSE_KEY | Enterprise License Key | optional |  |
 | NEXT_PUBLIC_WEBAPP_URL | Base URL of the site.  NOTE: if this value differs from the value used at build-time, there will be a slight delay during container start (to update the statically built files). | optional | `http://localhost:3000` |
-| NEXTAUTH_URL | Location of the auth server. By default, this is the Cal.com docker instance itself. | optional | `{NEXT_PUBLIC_WEBAPP_URL}/api/auth` |
+| NEXTAUTH_URL | Location of the auth server. By default, this is the Calx.mu docker instance itself. | optional | `{NEXT_PUBLIC_WEBAPP_URL}/api/auth` |
 | NEXTAUTH_SECRET | must match build variable | required | `secret` |
 | CALENDSO_ENCRYPTION_KEY | must match build variable | required | `secret` |
 | DATABASE_URL | database url with credentials | required | `postgresql://unicorn_user:magical_password@database:5432/calendso` |
@@ -212,13 +212,13 @@ These variables must also be provided at runtime
 
 If building the image yourself, these variables must be provided at the time of the docker build, and can be provided by updating the .env file. Currently, if you require changes to these variables, you must follow the instructions to build and publish your own image. 
 
-Updating these variables is not required for evaluation, but is required for running in production. Instructions for generating variables can be found in the [cal.com instructions](https://github.com/calcom/cal.com) 
+Updating these variables is not required for evaluation, but is required for running in production. Instructions for generating variables can be found in the [Calx.mu instructions](https://github.com/calcom/Calx.mu) 
 
 | Variable | Description | Required | Default |
 | --- | --- | --- | --- |
 | NEXT_PUBLIC_WEBAPP_URL | Base URL injected into static files | optional | `http://localhost:3000` |
 | NEXT_PUBLIC_LICENSE_CONSENT | license consent - true/false |  |  |
-| CALCOM_TELEMETRY_DISABLED | Allow cal.com to collect anonymous usage data (set to `1` to disable) | | |
+| CALCOM_TELEMETRY_DISABLED | Allow Calx.mu to collect anonymous usage data (set to `1` to disable) | | |
 | DATABASE_URL | database url with credentials | required | `postgresql://unicorn_user:magical_password@database:5432/calendso` |
 | NEXTAUTH_SECRET | Cookie encryption key | required | `secret` |
 | CALENDSO_ENCRYPTION_KEY | Authentication encryption key | required | `secret` |
